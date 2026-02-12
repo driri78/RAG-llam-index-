@@ -52,7 +52,7 @@ fastAPI
   1. __init__.py 폴더를 하나의 패키지로 인식하기 위해선 
      python -m 패키지.모듈 로 실행해줘야함
 
-프로젝트 의존성 패키지 목록 관리 파일 생성
+프로젝트 의존성 패키지 목록 관리 파일 생성 => 최신화 하려면 다시 실행하면됨
 pip freeze > requirements.txt
 
 포에트리 사용시 requirements 생성
@@ -60,3 +60,6 @@ poetry export -f requirements.txt --output requirements.txt
 
 git clone 시
 pip install -r requirements.txt로 모듈 한번에 설치
+
+.ipynb에서 파이썬 가상환경을 실행하기 위한 패키지 => colab으로 실행할경우 필요x
+pip install ipykernel

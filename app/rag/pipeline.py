@@ -13,11 +13,11 @@ def load_rag_index():
     return VectorStoreIndex.from_vector_store(vector_store)
 
 
-index = load_rag_index()
+def retrieve(question):
+    index = load_rag_index()
 
-q = "사업관리자 초기 설정 방법"
-retriever = index.as_retriever()
-results = retriever.retrieve(q)
+    retriever = index.as_retriever()
+    results = retriever.retrieve(question)
 
-for r in results:
-    print(r.node.text)
+    for r in results:
+        print(r.node.text)

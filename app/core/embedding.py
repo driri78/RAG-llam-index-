@@ -2,7 +2,7 @@ from llama_index.core import VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core import Settings, StorageContext
 from app.loaders.pdf_loader import pdf_loader
-from config import get_vector_store
+from .config import get_vector_store
 
 
 # model = SentenceTransformer('snunlp/KR-SBERT-V40K-klueNLI-augSTS')
@@ -29,4 +29,4 @@ def build_rag_index():
 
 
 # 1회용 => 벡터db 저장
-# build_rag_index()
+build_rag_index()
