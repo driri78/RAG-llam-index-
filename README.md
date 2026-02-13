@@ -23,6 +23,7 @@ pip install llama-index \
   -- openai 대신 무료 임베딩 라이브러리
   llama-index-embeddings-huggingface \
   llama-index-vector-stores-postgres \
+  llama-index-llms-huggingface
   psycopg2-binary \
   pypdf
 
