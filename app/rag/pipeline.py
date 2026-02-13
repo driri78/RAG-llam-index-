@@ -3,11 +3,12 @@ from llama_index.core import VectorStoreIndex, Settings
 from app.core.config import get_vector_store
 
 
-def load_rag_index():
+Settings.embed_model = HuggingFaceEmbedding(
+    model_name="snunlp/KR-SBERT-V40K-klueNLI-augSTS"
+)
 
-    Settings.embed_model = HuggingFaceEmbedding(
-        model_name="snunlp/KR-SBERT-V40K-klueNLI-augSTS"
-    )
+
+def load_rag_index():
 
     vector_store = get_vector_store()
     return VectorStoreIndex.from_vector_store(vector_store)
