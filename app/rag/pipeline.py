@@ -8,16 +8,16 @@ Settings.embed_model = HuggingFaceEmbedding(
 )
 
 
-def load_rag_index():
+def init_rag():
+    global retriever
 
     vector_store = get_vector_store()
-    return VectorStoreIndex.from_vector_store(vector_store)
+    index = VectorStoreIndex.from_vector_store(vector_store)
+    retriever = index.as_retriever()
 
 
 def retrieve(question):
-    index = load_rag_index()
 
-    retriever = index.as_retriever()
     results = retriever.retrieve(question)
 
     for r in results:
